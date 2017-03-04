@@ -1,0 +1,33 @@
+.search-page .search-sidebar {
+  position: fixed;
+  top: 3.25rem;
+  left: 0;
+  width: 25rem;
+  max-width: 100%;
+  height: calc(100vh - 3.25rem);
+  background: white;
+  z-index: 10;
+}
+
+.search-page .repo-list {
+  background: #e6e6e6;
+  right: 0;
+  width: calc(100% - 25rem);
+  position: absolute;
+  min-height: calc(100vh - 3.25rem);
+}
+
+/* Mobile Styles */
+.--mobile .search-page {
+  height: auto;
+}
+
+.--mobile .search-page .search-sidebar {
+  position: static;
+  height: auto;
+}
+
+.--mobile .search-page .search-sidebar {
+  position: static;
+  height: auto;
+}

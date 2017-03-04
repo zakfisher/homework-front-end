@@ -11,6 +11,7 @@ import store from './store';
 
 // Styles
 import './styles/index.css';
+import './styles/fonts.css';
 
 /**
   Client-side entry point

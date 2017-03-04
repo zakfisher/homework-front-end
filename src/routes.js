@@ -1,10 +1,12 @@
 import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 
-// Components & Containers
-import App from './components/App';
-import CurrentReposList from './containers/CurrentReposList';
-import MissingRoute from './components/MissingRoute';
+// Layouts
+import App from './layouts/App';
+
+// Pages
+import Search from './pages/Search';
+import MissingRoute from './pages/MissingRoute';
 
 /**
   Routes
@@ -19,8 +21,8 @@ import MissingRoute from './components/MissingRoute';
 
 const Routes = (
   <Route path="/" component={App}>
-    <IndexRoute component={CurrentReposList} />
-    <Route path="/repos/:username" component={CurrentReposList} />
+    <IndexRoute component={Search} />
+    <Route path="/repos/:username" component={Search} />
     <Route path="*" component={MissingRoute} />
   </Route>
 );

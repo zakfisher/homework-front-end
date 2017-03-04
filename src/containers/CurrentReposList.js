@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import store from '../store';
 import actions from '../actions';
-import ReposList from '../components/ReposList';
+import RepoList from '../components/RepoList';
 
 /*
   Helpers
@@ -17,15 +17,17 @@ const getReposByUser = username => {
 
 // Sort our list and apply filters
 const sortRepoList = (state, ownProps) => {
-  console.log('sort repo list', state.repos, ownProps.params);
+  // console.log('sort repo list', state.repos, ownProps.params);
   return state.repos;
 };
 
 const getRepos = (state, ownProps) => {
+
+  // Set user from route params
   const user = ownProps.params.username ? ownProps.params.username : defaultUser;
-  const isCurrentUser = state.currentUser === user;
 
   // If same user, return filtered repo list
+  const isCurrentUser = state.currentUser === user;
   if (isCurrentUser) return sortRepoList(state, ownProps);
 
   // If new user, get new repo list, return the current list in the meantime
@@ -47,7 +49,7 @@ const mapDispatchToProps = dispatch => ({});
 const CurrentReposList = connect(
   mapStateToProps,
   mapDispatchToProps
-)(ReposList);
+)(RepoList);
 
 export default CurrentReposList;
 
