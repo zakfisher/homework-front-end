@@ -1,8 +1,9 @@
 import React from 'react';
+import '../styles/footer.css';
 
 const Footer = () => (
   <footer className="footer">
-    <p>Zak Fisher, {(new Date()).getFullYear()}</p>
+    Zak Fisher, {(new Date()).getFullYear()}
   </footer>
 );
 

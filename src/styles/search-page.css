@@ -1,3 +1,12 @@
+.search-page h3 {
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+.search-page h3 span {
+  font-weight: 700;
+}
+
 .search-page .search-sidebar {
   position: fixed;
   top: 3.25rem;
@@ -21,13 +30,20 @@
 .--mobile .search-page {
   height: auto;
 }
-
 .--mobile .search-page .search-sidebar {
   position: static;
   height: auto;
 }
-
-.--mobile .search-page .search-sidebar {
+.--mobile .search-page .repo-list {
   position: static;
   height: auto;
+  width: 100%;
+}
+
+/* Tablet Styles */
+.--tablet .search-page .search-sidebar {
+  width: 20rem;
+}
+.--tablet .search-page .repo-list {
+  width: calc(100% - 20rem);
 }

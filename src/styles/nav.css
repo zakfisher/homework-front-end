@@ -10,16 +10,22 @@
   z-index: 10;
 }
 
-.nav + div {
-  padding-top: 3.25rem;
-  height: 100vh;
+.nav + * {
+  margin-top: 3.25rem;
+  height: calc(100vh - 3.25rem);
 }
 
 .nav h1 {
+  transition: color 300ms ease;
   color: white;
   font-size: 1.25rem;
   line-height: 3.25rem;
   font-weight: normal;
   margin: 0;
-  padding-left: 0.6rem;
+  margin-left: 1.1rem;
+  float: left;
+}
+
+.nav h1:hover {
+  color: #666;
 }

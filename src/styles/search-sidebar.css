@@ -1,3 +1,19 @@
 .search-sidebar {
+  padding: 1.5rem;
+}
+
+.search-sidebar input {
+  background: #e6e6e6;
+  height: 3.25rem;
+  width: 100%;
   padding: 1rem;
+  font-size: 1.5rem;
+  color: #2da3b7;
+  margin: 0.5em 0;
+}
+
+.search-sidebar footer {
+  position: absolute;
+  bottom: 1rem;
+  right: 1.5rem;
 }

@@ -5,13 +5,13 @@ import { Route, IndexRoute } from 'react-router';
 import App from './layouts/App';
 
 // Pages
-import Search from './pages/Search';
-import MissingRoute from './pages/MissingRoute';
+import Search from './containers/Search';
+import MissingRoute from './components/MissingRoute';
 
 /**
   Routes
   ---
-  ./app/routes.js
+  ./src/routes.js
 
   - This file configures routes via React Router.
   - These routes can be used universally with an Express server.
@@ -22,7 +22,7 @@ import MissingRoute from './pages/MissingRoute';
 const Routes = (
   <Route path="/" component={App}>
     <IndexRoute component={Search} />
-    <Route path="/repos/:username" component={Search} />
+    <Route path="/repos/(:username)" component={Search} />
     <Route path="*" component={MissingRoute} />
   </Route>
 );

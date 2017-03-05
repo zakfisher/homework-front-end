@@ -1,3 +1,81 @@
 .repo-list {
-  padding: 1rem;
+  padding: 1.5rem;
+  overflow: auto;
+}
+
+.repo-list ul {
+  padding-top: 0.5rem;
+  flex-wrap: wrap;
+  display: flex;
+}
+
+.repo-list__repo {
+  position: relative;
+  float: left;
+  padding: 0.5rem;
+}
+
+.repo-list__repo__inner {
+  background: white;
+  padding: 5%;
+  height: 100%;
+  width: 100%;
+}
+
+/* Mobile Styles */
+.--mobile .repo-list {
+  padding-bottom: 3rem;
+}
+
+.--mobile .repo-list__repo {
+  padding: 1rem 0 0;
+  width: 100%;
+}
+
+/* Tablet Styles */
+.--tablet .repo-list__repo {
+  width: 50%;
+}
+.--tablet .repo-list__repo:nth-child(2n + 1) {
+  clear: left;
+  padding-left: 0;
+}
+.--tablet .repo-list__repo:nth-child(2n) {
+  padding-right: 0;
+}
+
+/* Laptop Styles */
+.--laptop .repo-list__repo {
+  width: 33.33%;
+}
+.--laptop .repo-list__repo:nth-child(3n + 1) {
+  clear: left;
+  padding-left: 0;
+}
+.--laptop .repo-list__repo:nth-child(3n) {
+  padding-right: 0;
+}
+
+/* Desktop Styles */
+.--desktop .repo-list__repo {
+  width: 25%;
+}
+.--desktop .repo-list__repo:nth-child(4n + 1) {
+  clear: left;
+  padding-left: 0;
+}
+.--desktop .repo-list__repo:nth-child(4n) {
+  padding-right: 0;
+}
+
+/* Hi-res Styles */
+.--hi-res .repo-list__repo {
+  width: 20%;
+}
+.--hi-res .repo-list__repo:nth-child(5n + 1) {
+  clear: left;
+  padding-left: 0;
+}
+.--hi-res .repo-list__repo:nth-child(5n) {
+  padding-right: 0;
 }

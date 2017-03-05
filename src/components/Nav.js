@@ -1,9 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router';
 import '../styles/nav.css';
 
 const Nav = () => (
   <nav className="nav">
-    <h1>{"Zak's Git Repo Search"}</h1>
+    <Link to="/">
+      <h1>{"Zak's Git Repo Search"}</h1>
+    </Link>
   </nav>
 );
 
