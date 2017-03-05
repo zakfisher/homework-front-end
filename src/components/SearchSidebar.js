@@ -2,12 +2,6 @@ import React, { Component } from 'react';
 import Footer from './Footer';
 import '../styles/search-sidebar.css';
 
-const SearchHistory = () => (
-  <div className="search-sidebar__history">
-    <h3>Search History</h3>
-  </div>
-);
-
 class SearchSidebar extends Component {
   constructor() {
     super()
