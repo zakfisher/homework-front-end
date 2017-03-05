@@ -1,5 +1,4 @@
 import { connect } from 'react-redux';
-import store from '../store';
 import actions from '../actions';
 import SearchPage from '../components/SearchPage';
 
@@ -7,16 +6,20 @@ import SearchPage from '../components/SearchPage';
   Helpers
 */
 
-// Get user from url
 const getCurrentUser = (state, ownProps) => {
-  let currentUser = state.currentUser;
 
+  // Get user from url
   const { username } = ownProps.params;
   if (username) {
-    currentUser = username;
+    return username;
   }
 
-  return currentUser;
+  // Render with default user on homepage
+  else if (ownProps.router.location.pathname === '/') {
+    return actions.DEFAULT_USER;
+  }
+
+  return state.currentUser;
 };
 
 // Sort our list with number of watchers first
@@ -39,12 +42,12 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = dispatch => ({
   getReposForUser: username => {
-    store.dispatch( actions.setCurrentUser(username) );
-    store.dispatch( actions.getReposByUser(username) );
+    dispatch( actions.setCurrentUser(username) );
   },
   onUserFormSubmit: (e, router) => {
     const username = e.nativeEvent.target[0].value;
     router.push(`/repos/${username}`)
+    dispatch( actions.setCurrentUser(username) );
   }
 });
 

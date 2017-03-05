@@ -15,11 +15,14 @@ Repo.propTypes = {
   watchers: React.PropTypes.number.isRequired
 };
 
-const ReposList = ({ repos, currentUser }) => {
+const List = ({ repos }) => <ul>{ repos.map((repo, i) => <Repo key={i} {...repo} />) }</ul>;
+const EmptyList = () => <p>No repos to display.</p>
+
+const ReposList = (props) => {
   return (
     <div className="repo-list">
-      <h3>Public Repositories for <span>{currentUser}</span>:</h3>
-      <ul>{ repos.map((repo, i) => <Repo key={i} {...repo} />) }</ul>
+      <h3>Public Repositories for <span>{props.currentUser}</span>:</h3>
+      {props.repos.length ? <List {...props} /> : <EmptyList />}
     </div>
   );
 };

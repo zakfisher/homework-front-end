@@ -2,8 +2,8 @@ import Rx from 'rx-dom';
 import store from '../store';
 import actions from '../actions';
 
-const { GET_REPOS_BY_USER, SET_CURRENT_REPOS } = actions;
-const useFakeData = !false;
+const { SET_CURRENT_USER, SET_CURRENT_REPOS } = actions;
+const useFakeData = false;
 
 /*
  * Helpers
@@ -48,7 +48,7 @@ const getReposByUser = username => {
 export function repos(state = [], action) {
   switch (action.type) {
 
-  case GET_REPOS_BY_USER:
+  case SET_CURRENT_USER:
     getReposByUser(action.username);
     return state;
 
